@@ -1,0 +1,6 @@
+<%= form_for @card do |f|%>
+	<%= f.text_area :content, placeholder:'请输入正文' %>
+	<%= f.label :destination,'收件人：' %>
+	<%= f.text_field :destination, placeholder:'请输入收件人邮箱' %>
+	<%= f.submit '提交' %>
+<% end %>
