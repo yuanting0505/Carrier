@@ -1,0 +1,23 @@
+// Place all the styles related to the Senders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+form{
+	padding-top: 50px;
+	width:480px;
+	margin:auto;
+
+	textarea#content{
+		background: url('xinzhi.jpg') no-repeat;
+		background-size: 480px 360px;
+		height: 360px;
+		padding:40px;
+		font-size: 15px;
+		font-family: 'Microsoft YaHei',verdana,sans-serif;
+		font-weight: bold;
+		resize:none;
+	}
+	#destination{
+		font-family:verdana;
+		font-weight: bold;
+	}
+}

@@ -54,6 +54,5 @@ Carrier::Application.routes.draw do
   #     resources :products
   #   end
 
-  get 'senders/new'=>'senders#new'
   resources :cards
 end
