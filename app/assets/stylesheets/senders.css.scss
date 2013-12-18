@@ -1,3 +1,14 @@
 // Place all the styles related to the Senders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div#content{
+	width: 480px;
+	//background:url('images/xinzhi.jpg') no-repeat;
+	margin:auto;
+	padding:40px;
+	div#words{
+		font-size: 15px;
+		font-family: 'Microsoft YaHei',verdana,sans-serif;
+		font-weight: bold;
+	}
+}

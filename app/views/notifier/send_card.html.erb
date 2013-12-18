@@ -6,6 +6,11 @@
   </head>
 	<h1>您收到来自<%= @date %>的一封邮件</h1>
 	<h2>内容为：</h2>
-	<%= @content %>
+	<%= image_tag attachments['bg.jpg'].url  -%>
+	<div id='content'>
+		<div id='words'>
+			<%= @content %>
+		</div>
+	</div>
   </body>
 </html>
