@@ -9,15 +9,16 @@ class CardsController < ApplicationController
 		@card=Card.new(card_params)
 
 		filename=@card.destination+"_"+Time.now.to_s+'.jpg'
-		kit=IMGKit.new('http://www.baidu.com')
+		kit=IMGKit.new("http://#{request.host_with_port}")
 		img=kit.to_img(:jpg)
-		file=kit.to_file("/home/ottoyes/a.jpg")
-        # send_file(Rails.root+"assets/images/"+filename, 
-        	# :filename => filename, :type => "image/jpg",:disposition => 'attachment',:streaming=> 'true') 
+		@full_filename="#{Rails.root}/app/assets/images/cards/"+filename
+		file=kit.to_file(@full_filename)
+
 		@card.filename1=filename;
 
 		if @card.save
-			Notifier.send_card(@card.destination,@card.content,time_to_date(@card.created_at)).deliver
+
+			Notifier.send_card(@card.destination,@card.content,time_to_date(@card.created_at),@full_filename).deliver
             redirect_to 'http://wwww.baidu.com'
 		else
 			render 'new'
