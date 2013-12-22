@@ -6,7 +6,8 @@ class Notifier < ActionMailer::Base
   def send_card(destination,content,date)
   	@date=date
   	@content=content
-  	attachments.inline['bg.jpg']=File.read('~/app/assets/images/xinzhi.jpg');
+  	# attachments.inline['bg.jpg']=File.read('app/assets/images/xinzhi.jpg');
+  	
   	mail(to:destination,
          subject:'一封来自过去的信件'
   		)

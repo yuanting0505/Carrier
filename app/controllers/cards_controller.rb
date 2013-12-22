@@ -7,6 +7,15 @@ class CardsController < ApplicationController
 
 	def create
 		@card=Card.new(card_params)
+
+		filename=@card.destination+"_"+Time.now.to_s+'.jpg'
+		kit=IMGKit.new('http://www.baidu.com')
+		img=kit.to_img(:jpg)
+		file=kit.to_file("/home/ottoyes/a.jpg")
+        # send_file(Rails.root+"assets/images/"+filename, 
+        	# :filename => filename, :type => "image/jpg",:disposition => 'attachment',:streaming=> 'true') 
+		@card.filename1=filename;
+
 		if @card.save
 			Notifier.send_card(@card.destination,@card.content,time_to_date(@card.created_at)).deliver
             redirect_to 'http://wwww.baidu.com'

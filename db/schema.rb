@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216105008) do
+ActiveRecord::Schema.define(version: 20131222065754) do
 
   create_table "cards", force: true do |t|
     t.string   "destination"
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "filename1"
+    t.string   "filename2"
   end
 
 end
